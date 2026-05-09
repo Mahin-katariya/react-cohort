@@ -1,0 +1,3 @@
+## Learned how to display a list of items to html elements, also understood how the curly brackets that expect javascript expressions that evaluate React elements -> number, string, html elements.
+
+Thats how I encountered that forEach wouldnt work to display multiple items since the callbacks inside forEach are returning html elements, but forEach itself is returning undefined which is not a react element to be rendered.
