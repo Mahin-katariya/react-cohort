@@ -1,9 +1,11 @@
 /* App.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 .app-container {
     max-width: 1200px;       /* Limits the maximum width on large screens */
     margin: 0 auto;          /* Centers the container horizontally */
     padding: 2rem;           /* Provides the uniform left/right breathing room */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .app-header {

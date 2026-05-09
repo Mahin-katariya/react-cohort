@@ -5,7 +5,18 @@
     gap: 0.75rem;            /* Uniform spacing between image, title, and description */
     text-decoration: none;   /* In case you wrap the card in an <a> tag later */
     cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
+
+.book-card:hover{
+    transform: scale(1.03); /* Scales the card up by 3% */
+    cursor: pointer;        /* Changes the mouse arrow to a pointing hand */
+    
+    /* Optional: Adding a soft shadow makes it look like it's lifting off the page */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+}
+
 
 .book-card img {
     width: 100%;             /* Fills the column width provided by the parent grid */
@@ -20,6 +31,7 @@
     font-size: 1.25rem;
     font-weight: 600;
     color: #111;
+    height: 60px;
 }
 
 .book-card p {
