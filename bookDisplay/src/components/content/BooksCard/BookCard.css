@@ -1,0 +1,36 @@
+/* BookCard.css */
+.book-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;            /* Uniform spacing between image, title, and description */
+    text-decoration: none;   /* In case you wrap the card in an <a> tag later */
+    cursor: pointer;
+}
+
+.book-card img {
+    width: 100%;             /* Fills the column width provided by the parent grid */
+    aspect-ratio: 3 / 4;     /* Forces all images to have the same rectangular proportion */
+    object-fit: cover;       /* Crops the image cleanly if it doesn't match the aspect ratio */
+    border-radius: 12px;     /* The soft rounded corners from the design */
+    background-color: #eee;  /* A placeholder color while images load */
+}
+
+.book-card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.book-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;        /* Makes multi-line descriptions easier to read */
+    
+    /* Optional: Truncate description to 3 lines if it's too long */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

@@ -1,0 +1,11 @@
+/* BooksGrid.css */
+.books-grid {
+    display: grid;
+    /* Create columns at least 260px wide, but let them stretch (1fr) if there's extra room */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2.5rem; /* The spacing between rows and columns */
+    border-top: 1px solid #7a7a7a;
+    border-bottom: 1px solid #7a7a7a;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}

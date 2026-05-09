@@ -1,0 +1,23 @@
+/* App.css */
+.app-container {
+    max-width: 1200px;       /* Limits the maximum width on large screens */
+    margin: 0 auto;          /* Centers the container horizontally */
+    padding: 2rem;           /* Provides the uniform left/right breathing room */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app-header {
+    margin-bottom: 3rem;     /* Space between your titles and the grid */
+}
+
+.app-header h1 {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+    color: #111;
+}
+
+.app-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}   
