@@ -1,73 +1,29 @@
-# React + TypeScript + Vite
+# Tic-Tac-Toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Core Logic Flow
 
-Currently, two official plugins are available:
+The game operates on a unidirectional data flow, ensuring the UI stays perfectly in sync with the game state:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1.  **State Representation**: The board is modeled as a linear array of 9 elements (`SquareValue[]`), allowing for simple mapping and index-based lookups.
+2.  **Move Validation (Guardrails)**:
+    *   **Occupancy Check**: Prevents overwriting a square that already contains 'X' or 'O'.
+    *   **Conclusion Check**: Freezes the board once a winner is declared or a draw is reached, preventing post-game modifications.
+3.  **Derived Logic**: Instead of storing the winner in the state, the game calculates the winner and game status dynamically on **every render**. This ensures the "Source of Truth" remains the `squares` array.
+4.  **Winning Algorithm**: Uses a predefined list of winning coordinate patterns (rows, columns, and diagonals) to evaluate the board state.
 
-## React Compiler
+## Technical Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **React**: Functional components and Hooks (`useState`).
+*   **TypeScript**: Custom types and interfaces for strict type safety (`SquareValue`, `SquareProps`).
+*   **CSS Grid**: Utilized for a responsive, 3x3 layout with gray-shaded column gaps instead of traditional borders.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```text
+src/
+├── components/
+│   ├── Board.tsx   # Manages game logic, turn state, and win conditions
+│   └── Square.tsx  # Pure UI component for individual board tiles
+├── types/
+│   └── index.ts    # Shared SquareValue ('X' | 'O' | null)
+└── App.css         # Minimalist black & white styling
