@@ -1,0 +1,23 @@
+# Ignore build artifacts and dependencies
+node_modules
+dist
+build
+.next
+.nuxt
+out
+coverage
+public/build
+
+# Lockfiles
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Editor and OS files
+.vscode
+.DS_Store
+
+# Generated / minified files
+*.min.js
+*.map
+*.gz
