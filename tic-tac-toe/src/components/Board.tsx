@@ -46,7 +46,7 @@ export const Board = () => {
       }else if(!squares.includes(null)){
         status = "It's a draw!";
       }else{
-        status = `Next player is ${xIsNext ? "X" : "O"}`;
+        status = `Player is ${xIsNext ? "X" : "O"}`;
       }
   return (
     <div className="game-container">

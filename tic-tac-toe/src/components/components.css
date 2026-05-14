@@ -16,6 +16,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #000;
+  margin-bottom: 10px;
 }
 
 /* The Grid: No outer border, using gaps for the lines */
@@ -64,7 +65,7 @@
 
 .reset-btn:hover {
   background-color: #333;
-  transform: translateY(-1px); /* Subtle lift effect */
+  transform: scale(1.025);
 }
 
 .reset-btn:active {
