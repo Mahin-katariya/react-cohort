@@ -1,7 +1,6 @@
 import * as React from 'react'
 import './components.css'
-
-export type SquareValue = 'X' | 'O' | null;    
+import type { SquareValue } from '../types';
 interface SquareProps{
     value: SquareValue;
     // a function type signature looks like this: (arguments) => ReturnType

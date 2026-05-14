@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { SquareValue} from './Square';
+import type { SquareValue} from '../types';
 import { Square } from './Square';
 import './components.css'
 
